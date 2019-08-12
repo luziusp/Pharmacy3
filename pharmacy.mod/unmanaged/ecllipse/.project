@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Pharmacy</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Implementations</name>
+			<type>2</type>
+			<location>/rocket/modules/ad-swiss/ad-epd/Pharmacy3/pharmacy.mod/content/Implementations</location>
+		</link>
+	</linkedResources>
+</projectDescription>
