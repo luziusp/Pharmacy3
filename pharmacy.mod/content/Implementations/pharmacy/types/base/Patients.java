@@ -39,7 +39,7 @@ public abstract class Patients implements RepositoryObject {
     // ===========================================================================================
 
     public static final ClassId __typeId = ClassId.fromString("clas-bb590718-bd24-11e9-9db0-73896884cedf");
-    public static final short __typeVersion = 2;
+    public static final short __typeVersion = 3;
 
     // ===========================================================================================
     // ==== System properties
@@ -53,7 +53,7 @@ public abstract class Patients implements RepositoryObject {
     // ==== Properties
     // ===========================================================================================
 
-    public PatientsId getId() {
+    public PatientsId getEntryId() {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
@@ -61,15 +61,15 @@ public abstract class Patients implements RepositoryObject {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
-    protected void setId(PatientsId id) {
+    protected void setEntryId(PatientsId entryId) {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
-    public void setId(Uuid id) {
+    public void setEntryId(Uuid entryId) {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
-    public void setId(String id) {
+    public void setEntryId(String entryId) {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
