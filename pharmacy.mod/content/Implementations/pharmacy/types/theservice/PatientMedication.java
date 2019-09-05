@@ -1,10 +1,7 @@
-package pharmacy.types;
+package pharmacy.types.theservice;
 
-import java.time.LocalDate;
 
-import com.helmedica.common.types.Uuid;
-
-public class Patients extends pharmacy.types.base.Patients {
+public class PatientMedication extends pharmacy.types.theservice.base.PatientMedication {
 
     // ===========================================================================================
     // ==== Static members
@@ -17,17 +14,7 @@ public class Patients extends pharmacy.types.base.Patients {
     // ===========================================================================================
     // ==== Constructors
     // ===========================================================================================
-	public Patients() {}
-	
-	public Patients(String name, String firstName, LocalDate dob, Doctor doc){
-		
-		this.setName("PatName");
-		this.setFirstName("PatFn");
-		this.setDateOfBirth(dob);
-		this.setIsDoctor(doc);
-		this.setEntryId(Uuid.randomUuid());
-		
-	}
+
     // ===========================================================================================
     // ==== Properties
     // ===========================================================================================

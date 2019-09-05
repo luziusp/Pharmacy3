@@ -4,7 +4,9 @@ module pharmacy {
     /* @managed */ requires transitive rocketdb.api;
     /* @managed */ exports pharmacy.module;
     /* @managed */ exports pharmacy.repositories;
+    /* @managed */ exports pharmacy.services;
     /* @managed */ exports pharmacy.tests;
     /* @managed */ exports pharmacy.types;
     /* @managed */ exports pharmacy.types.module;
+    /* @managed */ exports pharmacy.types.theservice;
 }

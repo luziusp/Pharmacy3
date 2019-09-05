@@ -4,16 +4,17 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 
+
 import com.helmedica.common.types.Uuid;
 import com.helmedica.runtime.runner.Runner;
 import com.helmedica.testing.TestContext;
 import com.helmedica.testing.annotations.Step;
 
+
 import pharmacy.types.Doctor;
 import pharmacy.types.DoctorId;
 import pharmacy.types.Patients;
 import pharmacy.types.PatientsId;
-
 
 import com.helmedica.testing.annotations.Setup;
 import com.helmedica.testing.annotations.Cleanup;
@@ -105,5 +106,10 @@ public class DoctorTest {
         });
     	
     }
-
+    @Step
+    public void step4(TestContext context) throws Exception {
+    	
+    
+    	
+    }
 }
