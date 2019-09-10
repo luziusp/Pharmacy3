@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://www.example.org/Pharmacy/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+name="Pharmacy" 
+targetNamespace="http://www.example.org/Pharmacy/"
+>
+ 
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/Pharmacy/">
+    
+      <xsd:element name="GetDoctorInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DoctorID" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>        
+      </xsd:element>
+
+      <xsd:element name="Doctor">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DoctorID" type="xsd:string"/>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="firstName" type="xsd:string"/>
+            <xsd:element name="ean" type="xsd:string"/>
+            <xsd:element name="login" type="xsd:string"/>
+            <xsd:element name="password" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      
+        <xsd:element name="GetDoctorOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="tns:Doctor"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+   
+    
+    
+     <xsd:element name="GetBaseMedicationInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BaseMedicationId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BaseMedication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BaseMedicationId" type="xsd:string"/>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="pharmacode" type="xsd:string"/>
+            <xsd:element name="proce" type="xsd:string"/>
+            <xsd:element name="ean" type="xsd:string"/>
+            <xsd:element name="lastUpdate" type="xsd:string"/>
+             <xsd:element name="isActive" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+ 
+
+  
+  
+  <xsd:element name="GetBaseMedicationOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="tns:BaseMedication"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+  
+  
+       <xsd:element name="GetPatientInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PatientId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Patient">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PatientId" type="xsd:string"/>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="firstName" type="xsd:string"/>
+            <xsd:element name="dateOfBirth" type="xsd:string"/>
+            <xsd:element name="dateOfDeath" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      
+        <xsd:element name="GetPatientOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="tns:Patient"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+  
+        <xsd:element name="GetPatientMedicationInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PatientMedicationId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PatientMedication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PatientMedicationId" type="xsd:string"/>
+            <xsd:element name="BaseMedication" type="xsd:string"/>
+            <xsd:element name="prescriptionDate" type="xsd:string"/>
+            <xsd:element name="prescriptionEnd" type="xsd:string"/>
+            <xsd:element name="posologyMorning" type="xsd:string"/>
+            <xsd:element name="posologyMidday" type="xsd:string"/>
+            <xsd:element name="posologyMidday" type="xsd:string"/>
+            <xsd:element name="posologyMidday" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+     
+     
+      <xsd:element name="GetPatientMedicationOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="tns:PatientMedication"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+ 
+ 
+    </xsd:schema>
+  </wsdl:types>
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <wsdl:message name="GetDoctorInput">
+    <wsdl:part name="GetDoctor" element="tns:GetDoctorInput" />
+  </wsdl:message>
+  
+  <wsdl:message name="GetDoctorOutput">
+    <wsdl:part name="Body" element="tns:GetDoctorOutput" />
+  </wsdl:message>
+  
+  
+  
+    <wsdl:message name="GetBaseMedicationInput">
+    <wsdl:part name="GetBaseMedication" element="tns:GetBaseMedicationInput" />
+  </wsdl:message>
+  
+  <wsdl:message name="GetBaseMedicationOutput">
+    <wsdl:part name="Body" element="tns:GetBaseMedicationOutput" />
+  </wsdl:message>
+ 
+ 
+ 
+   <wsdl:message name="GetPatientMedicationInput">
+    <wsdl:part name="GetPatientMedication" element="tns:GetPatientMedicationInput" />
+  </wsdl:message>
+  
+  <wsdl:message name="GetPatientMedicationOutput">
+    <wsdl:part name="Body" element="tns:GetPatientMedicationOutput" />
+  </wsdl:message>
+  
+  
+  
+  
+  <wsdl:message name="GetPatientInput">
+    <wsdl:part name="GetPatient" element="tns:GetPatientInput" />
+  </wsdl:message>
+  
+  <wsdl:message name="GetPatientOutput">
+    <wsdl:part name="Body" element="tns:GetPatientOutput" />
+  </wsdl:message>
+ 
+ 
+  
+
+  
+  <wsdl:portType name="Pharmacy">
+    <wsdl:operation name="GetDoctor">
+      <wsdl:input message="tns:GetDoctorInput"/>
+      <wsdl:output message="tns:GetDoctorOutput"/>
+    </wsdl:operation>
+    
+     <wsdl:operation name="GetPatient">
+      <wsdl:input message="tns:GetPatientInput"/>
+      <wsdl:output message="tns:GetPatientOutput"/>
+    </wsdl:operation>
+
+     <wsdl:operation name="GetPatientMedication">
+      <wsdl:input message="tns:GetPatientMedicationInput"/>
+      <wsdl:output message="tns:GetPatientMedicationOutput"/>
+    </wsdl:operation>
+         <wsdl:operation name="GetBaseMedication">
+      <wsdl:input message="tns:GetBaseMedicationInput"/>
+      <wsdl:output message="tns:GetBaseMedicationOutput"/>
+    </wsdl:operation>
+       
+  </wsdl:portType>
+  
+  
+  
+  <wsdl:binding name="PharmacySOAP" type="tns:Pharmacy">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+   
+    <wsdl:operation name="GetDoctor">
+      <soap:operation soapAction="http://www.example.org/Pharmacy/GetDoctor"/>
+      <wsdl:input>
+        <soap:body parts ="GetDoctor" use="literal"/>
+       
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    
+        <wsdl:operation name="GetPatient">
+      <soap:operation soapAction="http://www.example.org/Pharmacy/GetPatient"/>
+      <wsdl:input>
+        <soap:body parts ="GetPatient" use="literal"/>
+    
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+     
+        <wsdl:operation name="GetPatientMedication">
+      <soap:operation soapAction="http://www.example.org/Pharmacy/GetPatientMedication"/>
+      <wsdl:input>
+        <soap:body parts ="GetPatientMedication" use="literal"/>
+       
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+       
+        <wsdl:operation name="GetBaseMedication">
+      <soap:operation soapAction="http://www.example.org/Pharmacy/GetPatientMedication"/>
+      <wsdl:input>
+        <soap:body parts ="GetBaseMedication" use="literal"/>
+
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>      
+  </wsdl:binding>
+  
+  
+  
+  <wsdl:service name="Pharmacy">
+    <wsdl:port binding="tns:PharmacySOAP" name="PharmacySOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
